@@ -1,0 +1,19 @@
+version: "3.0"
+
+services:
+  spring-sample-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "sample"
+      MYSQL_DATABASE: "sample"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./volumes/var/lib/mysql:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - spring-sample-network
+
+networks:
+  spring-sample-network:
+    driver: bridge

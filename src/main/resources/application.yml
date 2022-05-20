@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-sample
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/sample
+    username: root
+    password: sample
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
